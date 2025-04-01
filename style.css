@@ -1,0 +1,260 @@
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #4cc9f0;
+  --warning-color: #f72585;
+  --danger-color: #ef233c;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --primary-color: #4895ef;
+  --secondary-color: #4361ee;
+  --light-color: #212529;
+  --dark-color: #f8f9fa;
+  --card-bg: #2b2d42;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--dark-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.form-section, .analytics-section {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+#add-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#add-btn:hover {
+  background: var(--secondary-color);
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: #e9ecef;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+#custom-date {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  border: 1px solid #ddd;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+.summary-card h3 {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.expenses-list {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.list-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+#expense-list {
+  list-style: none;
+}
+
+.expense-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0.25rem;
+}
+
+.expense-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.expense-name strong {
+  font-weight: 500;
+}
+
+.expense-name small {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.expense-amount {
+  font-weight: 600;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+.payment-mode {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.payment-cash { color: #2ecc71; }
+.payment-gpay { color: #4285f4; }
+.payment-card { color: #e74c3c; }
+.payment-upi { color: #9b59b6; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .list-header, .expense-item {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
