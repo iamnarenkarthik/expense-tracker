@@ -71,6 +71,11 @@ app.get('/api/expenses', async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
+
 app.delete('/api/expenses/:id', async (req, res) => {
   try {
     await Expense.findByIdAndDelete(req.params.id);
